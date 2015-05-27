@@ -52,6 +52,31 @@ describe('Thermostat', function()  {
       expect(thermostat.maxTemp).toBe(25);
     });
 
+    it('does not allow the temp below the minimum temperature', function () {
+      thermostat.temp = 10
+      thermostat.decrease()
+      expect(thermostat.temp).toBe(10)
+    });
+
+    it('does not allow temp above 25 with PSM on', function() {
+      thermostat.temp = 25
+      thermostat.increase()
+      expect(thermostat.temp).toBe(25)
+    });
+
+    it('does not allow temp above 32 with PSM off', function() {
+      thermostat.temp = 32
+      thermostat.increase()
+      expect(thermostat.temp).toBe(32)
+    });
+
+    it('reset will set temperature back to 25 if currently higher', function()  {
+      thermostat.powerSaveButton()
+      thermostat.temp = 26
+      thermostat.powerSaveButton()
+      expect(thermostat.temp).toBe(25)
+    });
+
   });
 
 })

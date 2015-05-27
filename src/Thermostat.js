@@ -11,18 +11,24 @@ Thermostat.prototype.powerSaveButton = function() {
     this.maxTemp = 32;
     this.powerSave = false;
   } 
-  else {
+  else 
+  {
     this.maxTemp = 25;
     this.powerSave = true;
+    this.temp = 25;
   }
 };
 
 Thermostat.prototype.increase = function() {
-  return this.temp += 1
+  if((this.powerSave === true && this.temp < 25) || (this.powerSave === false && this.temp < 32)) {
+    this.temp += 1
+  } 
 };
 
 Thermostat.prototype.decrease = function() {
-  return this.temp -= 1
+  if(this.temp > 10) {
+  this.temp -= 1
+  }
 };
 
 Thermostat.prototype.resetThermostat = function() {
