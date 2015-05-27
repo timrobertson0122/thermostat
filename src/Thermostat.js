@@ -36,3 +36,5 @@ Thermostat.prototype.resetThermostat = function() {
   this.maxTemp = 25
   this.powerSave = true
 };
+
+thermostat = new Thermostat
