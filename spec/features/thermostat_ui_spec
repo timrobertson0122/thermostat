@@ -1,0 +1,7 @@
+describe('Thermostat UI', function() {
+  
+})
+
+
+loadFixtures('thermostat.html')
+$('')

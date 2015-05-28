@@ -1,7 +1,7 @@
 thermostat = new Thermostat
 
 window.onload = function WindowLoad(event) {
-  if(thermostat.powerSave === true) {
+  if(thermostat.powerSave) {
     document.getElementById('psm_on').checked = true;
   }
   else {
@@ -33,5 +33,13 @@ function pressPowerSaveButton() {
 }
 
 function update() {
+  // postTemperatureToAPI();
   document.getElementById('display').innerHTML = thermostat.temp;
 }
+
+// function postTemperatureToAPI() {
+//   var xmlhttp = new XMLHttpRequest();
+//   xmlhttp.open("POST", "/temperature_records", true);
+//   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//   xmlhttp.send("temperature=" + thermostat.temp);
+// }

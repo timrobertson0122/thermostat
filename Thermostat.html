@@ -2,6 +2,7 @@
 
   <head>
 
+    <script src="lib/jquery.js"></script>
     <script src="src/Thermostat.js"></script>
     <script src="src/App.js"></script>
 
@@ -16,9 +17,9 @@
     <p>Current Temp</p><br>
     <div id="display"></div><br>
 
-      <button type="button" onclick="pressIncrease()">&uarr;</button>
-      <button type="button" onclick="pressDecrease()">&darr;</button>
-      <button type="button" onclick="pressResetThermostat()">Reset</button><br>
+      <button type="button" id='up' onclick="pressIncrease()">&uarr;</button>
+      <button type="button" id='down' onclick="pressDecrease()">&darr;</button>
+      <button type="button" id='reset' onclick="pressResetThermostat()">Reset</button><br>
    
     <br>
     <div id="power_save">Power Saving Mode:
@@ -29,3 +30,5 @@
   </body>
 
 </html>
+
+

@@ -14,7 +14,7 @@ Thermostat.prototype.increase = function() {
 
 Thermostat.prototype.decrease = function() {
   if(this.temp > 10) {
-  this.temp -= 1
+    this.temp -= 1
   }
 };
 
