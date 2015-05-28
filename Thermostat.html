@@ -1,29 +1,31 @@
-<!DOCTYPE html>
 <html>
+
   <head>
+
     <script src="src/Thermostat.js"></script>
-    <script src="src/Helpers.js"></script>
+    <script src="src/App.js"></script>
+
     <title>Thermostat</title>
+
   </head>
+
   <body>
 
   <h1>Bitchin' Thermostat</h1>
 
-    <form>
-      Current Temp<br>
-      <div id="display"> 20 </div>
-      <br>
-      <button type="button" onclick="thermostat.pressIncrease(), thermostat.update()">Temp Up</button>
-      <button type="button" onclick="thermostat.pressDecrease(), thermostat.update()">Temp Down</button>
-      <button type="button" onclick="thermostat.pressResetThermostat(), thermostat.update()">Reset</button>
-      <br>
-      
-      <div id="power_save">Power Saving Mode:
-      <input type="radio" name="PSM" value="On" id="psm_on" onclick="thermostat.pressPowerSaveButton(), thermostat.update()"checked>On
-      <input type="radio" name="PSM" value="Off" id="psm_off" onclick="thermostat.pressPowerSaveButton(), thermostat.update()">Off
-      <br>
-    </form>
+    <p>Current Temp</p><br>
+    <div id="display"></div><br>
 
+      <button type="button" onclick="pressIncrease()">&uarr;</button>
+      <button type="button" onclick="pressDecrease()">&darr;</button>
+      <button type="button" onclick="pressResetThermostat()">Reset</button><br>
+   
+    <br>
+    <div id="power_save">Power Saving Mode:
+      <input type="radio" name="PSM" value="On" id="psm_on" onclick="pressPowerSaveButton()"/>On
+      <input type="radio" name="PSM" value="Off" id="psm_off" onclick="pressPowerSaveButton()">Off
+    </div>
 
   </body>
+
 </html>
