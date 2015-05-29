@@ -1,14 +1,14 @@
-thermostat = new Thermostat
+thermostat = new Thermostat();
 
-window.onload = function WindowLoad(event) {
+$(document).ready(function() {
   if(thermostat.powerSave) {
     document.getElementById('psm_on').checked = true;
   }
   else {
     document.getElementById('psm_off').checked = true;
   };
-  document.getElementById('display').innerHTML = thermostat.temp
-};
+  document.getElementById('display').innerHTML = thermostat.temp;
+});
 
 function pressIncrease() {
   thermostat.increase();
