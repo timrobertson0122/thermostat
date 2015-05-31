@@ -1,4 +1,4 @@
-var Thermostat = function() {
+function Thermostat() {
   this._temp = 20
   this._powerSave = true
 };

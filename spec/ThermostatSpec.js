@@ -1,8 +1,8 @@
-describe('Thermostat', function()  {
+describe('Thermostat', function() {
 
   var thermostat;
 
-    beforeEach(function()   {
+    beforeEach(function() {
       thermostat = new Thermostat();
     });
 
@@ -51,7 +51,6 @@ describe('Thermostat', function()  {
       thermostat.upButton();
       expect(thermostat.temp()).toBe(25); 
     });
-
   });
 
   describe('has', function() {
@@ -79,68 +78,27 @@ describe('Thermostat', function()  {
     });
   });
 
-  describe('displays', function() {
+  // describe('displays', function() {
 
-    it('green when temp is less than 18', function() {
-      for (var i = 0; i < 20; i ++) {
-        thermostat.downButton();
-      };
-      expect(thermostat.tempColor()).toBe('green');
-    });
+  //   it('green when temp is less than 18', function() {
+  //     for (var i = 0; i < 20; i ++) {
+  //       thermostat.downButton();
+  //     };
+  //     expect(thermostat.tempColor()).toBe('green');
+  //   });
 
-    it('yellow when temp is less than 25', function() {
-      for (var i = 0; i < 2; i ++) {
-        thermostat.upButton();
-      };
-      expect(thermostat.tempColor()).toBe('yellow');
-    });
+  //   it('yellow when temp is less than 25', function() {
+  //     for (var i = 0; i < 2; i ++) {
+  //       thermostat.upButton();
+  //     };
+  //     expect(thermostat.tempColor()).toBe('yellow');
+  //   });
 
-    it('red when temp is 25 or above', function() {
-      for (var i = 0; i < 20; i ++) {
-        thermostat.upButton();
-      };
-      expect(thermostat.tempColor()).toBe('red');
-    });
-  });
+  //   it('red when temp is 25 or above', function() {
+  //     for (var i = 0; i < 20; i ++) {
+  //       thermostat.upButton();
+  //     };
+  //     expect(thermostat.tempColor()).toBe('red');
+  //   });
+  // });
 });
-
-    
-
-    
-    
-
-    it('has a maximum temp of 32 when Power Saving Mode is off', function() {
-      thermostat.powerSaveButton()
-      expect(thermostat.maxTemp).toBe(32);
-    });
-
-    
-
-    it('does not allow the temp below the minimum temperature', function () {
-      thermostat.temp = 10
-      thermostat.decrease()
-      expect(thermostat.temp).toBe(10)
-    });
-
-    it('does not allow temp above 25 with PSM on', function() {
-      thermostat.temp = 25
-      thermostat.increase()
-      expect(thermostat.temp).toBe(25)
-    });
-
-    it('does not allow temp above 32 with PSM off', function() {
-      thermostat.temp = 32
-      thermostat.increase()
-      expect(thermostat.temp).toBe(32)
-    });
-
-    it('reset will set temperature back to 25 if currently higher', function()  {
-      thermostat.powerSaveButton()
-      thermostat.temp = 26
-      thermostat.powerSaveButton()
-      expect(thermostat.temp).toBe(25)
-    });
-
-  });
-
-})

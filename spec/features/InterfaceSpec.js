@@ -25,7 +25,7 @@ describe('Interface', function() {
   });
 
   it('resets to temp 20 and PSM on when reset button is click', function(){
-    $('#reset').click();
+    $('#resetbutton').click();
     expect('#temp').toContainText('20');
     expect("#psm_on").toBeChecked();
   });

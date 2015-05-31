@@ -1,16 +1,8 @@
 thermostat = new Thermostat();
 
-$(document).ready(function() {
+$(document).ready(function(){
 
   var OpenWeather = 'http://api.openweathermap.org/data/2.5/weather?q=London,uk'
-
-  $('#powerbutton').click(function(){
-    $('.screen').fadeToggle();
-    $('.buttons').fadeToggle();
-    thermostat.resetThermostat();
-    updateColor();
-    $('#temp').text(thermostat.temp());
-  });
 
   $.getJSON(OpenWeather, function(data) {
     getTemp = data.main.temp;
@@ -52,9 +44,3 @@ $(document).ready(function() {
   });
 
 });
-// function postTemperatureToAPI() {
-//   var xmlhttp = new XMLHttpRequest();
-//   xmlhttp.open("POST", "/temperature_records", true);
-//   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-//   xmlhttp.send("temperature=" + thermostat.temp);
-// }
