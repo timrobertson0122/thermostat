@@ -43,14 +43,6 @@ describe('Thermostat', function() {
       expect(thermostat._powerSave).toBe(false);
     });
 
-    it('sets the maximum temp to 25 when PSM is on', function() {
-      thermostat.psButton();
-      for (var i = 0; i < 20; i ++) {
-      thermostat.upButton();
-      };
-      thermostat.upButton();
-      expect(thermostat._temp).toBe(25); 
-    });
   });
 
   describe('has', function() {
@@ -63,17 +55,14 @@ describe('Thermostat', function() {
     });
 
     it('a maximum temp of 25 with power saving mode on', function() {
-      for (var i = 0; i < 20; i ++) {
-        thermostat.upButton();
-      };
+      thermostat._temp = 25
+      thermostat.upButton()
       expect(thermostat._temp).toBe(25);
     });
 
     it('a maximum temp of 32 with power saving mode off', function() {
-      thermostat.psButton();
-      for (var i = 0; i < 20; i ++) {
-        thermostat.upButton();
-      };
+      thermostat._temp = 32
+      thermostat.upButton();
       expect(thermostat._temp).toBe(32);
     });
   });

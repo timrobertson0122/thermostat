@@ -1,6 +1,8 @@
 thermostat = new Thermostat();
 
 $(document).ready(function(){
+  
+  $("#psm_on").prop("checked", true)
 
   var OpenWeather = 'http://api.openweathermap.org/data/2.5/weather?q=London,uk'
 
@@ -17,24 +19,20 @@ $(document).ready(function(){
 
   $('#temp').text(thermostat.temp());
   $('#temp').text(function(){
-    // updateColor();
   });
 
   $('#up').click(function(){
     thermostat.upButton();
-    // updateColor();
     $('#temp').text(thermostat.temp());
   });
 
   $('#down').click(function(){
     thermostat.downButton();
-    // updateColor();
     $('#temp').text(thermostat.temp());
   });
 
   $('#resetbutton').click(function(){
     thermostat.resetThermostat();
-    // updateColor();
     $('#temp').text(thermostat.temp());
   });
 
