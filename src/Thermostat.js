@@ -4,15 +4,15 @@ function Thermostat() {
 };
 
 Thermostat.prototype.temp = function() {
-  return this._temp
+  return this._temp;
 };
 
 Thermostat.prototype.upButton = function() {
   if (this._powerSave && this._temp < 25) {
     this._temp ++;
   }; 
-  if (!this._powerSave && this._temp < 32) {
-    this._temp ==;
+  if (this._powerSave === false && this._temp < 32) {
+    this._temp ++;
   };
 };
 
@@ -28,6 +28,7 @@ Thermostat.prototype.psStatus = function() {
 
 Thermostat.prototype.resetThermostat = function() {
   this._temp = 20;
+  this._powerSave;
 };
 
 Thermostat.prototype.psButton = function() {
@@ -37,12 +38,12 @@ Thermostat.prototype.psButton = function() {
   };
 };
 
-Thermostat.prototype.tempColor = function() {
-  if (this._temp < 18) {
-    return 'green';
-  };
-  if (this._temp < 25) {
-    return 'yellow';
-  };
-  return 'red';
-};
+// Thermostat.prototype.tempColor = function() {
+//   if (this._temp < 18) {
+//     return 'green';
+//   };
+//   if (this._temp < 25) {
+//     return 'yellow';
+//   };
+//   return 'red';
+// };

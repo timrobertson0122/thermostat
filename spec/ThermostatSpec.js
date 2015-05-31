@@ -9,11 +9,11 @@ describe('Thermostat', function() {
   describe('when created', function()  {
     
     it('is set at a default temperature of 20', function()   {
-      expect(thermostat.temp).toBe(20);
+      expect(thermostat._temp).toBe(20);
     });
 
     it('is set to Power Saving mode on', function() {
-      expect(thermostat.powerSave).toBe(true);
+      expect(thermostat._powerSave).toBe(true);
       // expect(thermostat.maxTemp).toBe(25);
     });
   });
@@ -22,12 +22,12 @@ describe('Thermostat', function() {
 
     it('increase the temperature by one with the up button', function() {
       thermostat.upButton()
-      expect(thermostat.temp).toBe(21);
+      expect(thermostat._temp).toBe(21);
     });
 
     it('decrease the temperature by one with the down button', function() {
       thermostat.downButton()
-      expect(thermostat.temp).toBe(19);
+      expect(thermostat._temp).toBe(19);
     });
 
     it('can be reset to default settings', function() {
@@ -35,12 +35,12 @@ describe('Thermostat', function() {
         thermostat.upButton();
       };
       thermostat.resetThermostat();
-      expect(thermostat.temp()).toBe(20);
+      expect(thermostat._temp).toBe(20);
     });
 
     it('toggle power saving mode off', function() {
       thermostat.psButton();
-      expect(thermostat.powerSave()).toBe(false);
+      expect(thermostat._powerSave).toBe(false);
     });
 
     it('sets the maximum temp to 25 when PSM is on', function() {
@@ -49,7 +49,7 @@ describe('Thermostat', function() {
       thermostat.upButton();
       };
       thermostat.upButton();
-      expect(thermostat.temp()).toBe(25); 
+      expect(thermostat._temp).toBe(25); 
     });
   });
 
@@ -59,14 +59,14 @@ describe('Thermostat', function() {
       for (var i = 0; i < 20; i ++) {
         thermostat.downButton();
       };
-      expect(thermostat.temp()).toBe(10);
+      expect(thermostat._temp).toBe(10);
     });
 
     it('a maximum temp of 25 with power saving mode on', function() {
       for (var i = 0; i < 20; i ++) {
         thermostat.upButton();
       };
-      expect(thermostat.temp()).toBe(25);
+      expect(thermostat._temp).toBe(25);
     });
 
     it('a maximum temp of 32 with power saving mode off', function() {
@@ -74,7 +74,7 @@ describe('Thermostat', function() {
       for (var i = 0; i < 20; i ++) {
         thermostat.upButton();
       };
-      expect(thermostat.temp()).toBe(32);
+      expect(thermostat._temp).toBe(32);
     });
   });
 

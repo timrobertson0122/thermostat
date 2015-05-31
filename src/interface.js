@@ -17,24 +17,24 @@ $(document).ready(function(){
 
   $('#temp').text(thermostat.temp());
   $('#temp').text(function(){
-    updateColor();
+    // updateColor();
   });
 
   $('#up').click(function(){
     thermostat.upButton();
-    updateColor();
+    // updateColor();
     $('#temp').text(thermostat.temp());
   });
 
   $('#down').click(function(){
     thermostat.downButton();
-    updateColor();
+    // updateColor();
     $('#temp').text(thermostat.temp());
   });
 
   $('#resetbutton').click(function(){
     thermostat.resetThermostat();
-    updateColor();
+    // updateColor();
     $('#temp').text(thermostat.temp());
   });
 
