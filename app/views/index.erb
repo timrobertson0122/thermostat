@@ -3,8 +3,6 @@
   <head>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="src/Thermostat.js"></script>
-    <script src="src/Interface.js"></script>
 
     <title>Thermostat</title>
 
@@ -12,7 +10,7 @@
 
   <body>
 
-  <h1>Bitchin' Thermostat</h1>
+    <h1>Bitchin' Thermostat</h1>
 
     <p>Current Temp</p><br>
     <div id="temp"></div><br>
@@ -28,18 +26,19 @@
     </div>
 
     <br>
-  What is the weather in another City?
-  <form id='city-search' name="City search">
-    <input type='text' name='city'/>
-    <input type='submit' value='search'>
-  </form>
-  <br>
-  Your searched city has: <div id='city-weather'> </div>
-  <br>
-  And the temperature is: <div id='city-temp'> </div>
+    What is the weather in another City?
+    <form id='city-search' name="City search">
+      <input type='text' name='city'/>
+      <input type='submit' value='search'>
+    </form>
+    <br>
+    Current Forecast: <div id='city-weather'> </div>
+    <br>
+    Current Temperature (C): <div id='city-temp'> </div>
 
+    <script src="JS/src/weather.js"></script>
+    <script src="JS/src/Thermostat.js"></script>
+    <script src="JS/src/Interface.js"></script>
   </body>
 
 </html>
-
-

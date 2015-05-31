@@ -4,13 +4,13 @@ $(document).ready(function(){
   
   $("#psm_on").prop("checked", true)
 
-  var OpenWeather = 'http://api.openweathermap.org/data/2.5/weather?q=London,uk'
+  // var OpenWeather = 'http://api.openweathermap.org/data/2.5/weather?q=London,uk'
 
-  $.getJSON(OpenWeather, function(data) {
-    getTemp = data.main.temp;
-    temp = temperatureConverter(getTemp);
-    $('#outsideTemperature').html(temp);
-  });
+  // $.getJSON(OpenWeather, function(data) {
+  //   getTemp = data.main.temp;
+  //   temp = temperatureConverter(getTemp);
+  //   $('#outsideTemperature').html(temp);
+  // });
 
   function temperatureConverter(temp){
     temp = temp - 273.15;
