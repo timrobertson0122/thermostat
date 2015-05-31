@@ -1,4 +1,4 @@
-describe('Thermostat UI', function() {
+describe('Interface', function() {
   
   beforeEach(function() {
     jasmine.getFixtures().fixturesPath = './';
@@ -7,7 +7,7 @@ describe('Thermostat UI', function() {
   });
 
   it('displays default temperature', function(){
-    expect("#display").toContainText('20');
+    expect("#temp").toContainText('20');
   });
 
   it('is set to PSM on', function(){
@@ -16,17 +16,17 @@ describe('Thermostat UI', function() {
 
   it('increases temperature when up arrow is cicked', function(){
     $('#up').click();
-    expect('#display').toContainText('21');
+    expect('#temp').toContainText('21');
   });
 
   it('decreases temperature when down arrow is cicked', function(){
     $('#down').click();
-    expect('#display').toContainText('19');
+    expect('#temp').toContainText('19');
   });
 
   it('resets to temp 20 and PSM on when reset button is click', function(){
     $('#reset').click();
-    expect('#display').toContainText('20');
+    expect('#temp').toContainText('20');
     expect("#psm_on").toBeChecked();
   });
 

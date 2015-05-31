@@ -1,38 +1,48 @@
-function Thermostat () {
-  this.minTemp = 10
-  this.temp = 20
-  this.maxTemp = 25
-  this.powerSave = true
+var Thermostat = function() {
+  this._temp = 20
+  this._powerSave = true
 };
 
-Thermostat.prototype.increase = function() {
-  if((this.powerSave === true && this.temp < 25) 
-     || (this.powerSave === false && this.temp < 32)) {
-    this.temp += 1
-  } 
+Thermostat.prototype.temp = function() {
+  return this._temp
 };
 
-Thermostat.prototype.decrease = function() {
-  if(this.temp > 10) {
-    this.temp -= 1
-  }
+Thermostat.prototype.upButton = function() {
+  if (this._powerSave && this._temp < 25) {
+    this._temp ++;
+  }; 
+  if (!this._powerSave && this._temp < 32) {
+    this._temp ==;
+  };
+};
+
+Thermostat.prototype.downButton = function() {
+  if(this._temp > 10) {
+    this._temp --;
+  };
+};
+
+Thermostat.prototype.psStatus = function() {
+  return this._powerSave;
 };
 
 Thermostat.prototype.resetThermostat = function() {
-  this.temp = 20
-  this.maxTemp = 25
-  this.powerSave = true
+  this._temp = 20;
 };
 
-Thermostat.prototype.powerSaveButton = function() {
-  if(this.powerSave === true)  {
-    this.maxTemp = 32;
-    this.powerSave = false;
-  } 
-  else 
-  {
-    this.maxTemp = 25;
-    this.powerSave = true;
-    this.temp = 25;
-  }
+Thermostat.prototype.psButton = function() {
+  this._powerSave = !this._powerSave;
+  if (this._temp > 25) {
+    this._temp = 25;
+  };
+};
+
+Thermostat.prototype.tempColor = function() {
+  if (this._temp < 18) {
+    return 'green';
+  };
+  if (this._temp < 25) {
+    return 'yellow';
+  };
+  return 'red';
 };

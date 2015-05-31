@@ -15,14 +15,14 @@
   <h1>Bitchin' Thermostat</h1>
 
     <p>Current Temp</p><br>
-    <div id="display"></div><br>
+    <div id="temp"></div><br>
 
       <button type="button" id='up' onclick="pressIncrease()">&uarr;</button>
       <button type="button" id='down' onclick="pressDecrease()">&darr;</button>
-      <button type="button" id='reset' onclick="pressResetThermostat()">Reset</button><br>
+      <button type="button" id='resetbutton' onclick="pressResetThermostat()">Reset</button><br>
    
     <br>
-    <div id="power_save">Power Saving Mode:
+    <div id="psStatus">Power Saving Mode:
       <input type="radio" name="PSM" value="On" id="psm_on" onclick="pressPowerSaveButton()"/>On
       <input type="radio" name="PSM" value="Off" id="psm_off" onclick="pressPowerSaveButton()">Off
     </div>
