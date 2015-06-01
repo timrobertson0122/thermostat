@@ -1,8 +1,8 @@
 describe('Interface', function() {
   
   beforeEach(function() {
-    jasmine.getFixtures().fixturesPath = './';
-    loadFixtures('Thermostat.html');
+    jasmine.getFixtures().fixturesPath = '.';
+    loadFixtures('index.erb.html');
     $.holdReady(false);
   });
 
