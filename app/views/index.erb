@@ -1,0 +1,44 @@
+<html>
+
+  <head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <title>Thermostat</title>
+
+  </head>
+
+  <body>
+
+    <h1>Bitchin' Thermostat</h1>
+
+    <p>Current Temp</p><br>
+    <div id="temp"></div><br>
+
+      <button type="button" id='up'>&uarr;</button>
+      <button type="button" id='down'>&darr;</button>
+      <button type="button" id='resetbutton'>Reset</button><br>
+   
+    <br>
+    <div id="psStatus">Power Saving Mode:
+      <input type="radio" name="PSM" value="On" id="psm_on"/>On
+      <input type="radio" name="PSM" value="Off" id="psm_off">Off
+    </div>
+
+    <br>
+    What is the weather in another City?
+    <form id='city-search' name="City search">
+      <input type='text' name='city'/>
+      <input type='submit' value='search'>
+    </form>
+    <br>
+    Current Forecast: <div id='city-weather'> </div>
+    <br>
+    Current Temperature (C): <div id='city-temp'> </div>
+
+    <script src="JS/src/weather.js"></script>
+    <script src="JS/src/Thermostat.js"></script>
+    <script src="JS/src/Interface.js"></script>
+  </body>
+
+</html>

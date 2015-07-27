@@ -1,0 +1,24 @@
+{
+  "name": "thermostat",
+  "version": "1.0.0",
+  "description": "Thermostat app",
+  "main": "grunt.js",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-jasmine-runner": "^0.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "testing"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timrobertson0122/thermostat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timrobertson0122/thermostat/issues"
+  },
+  "homepage": "https://github.com/timrobertson0122/thermostat#readme"
+}
