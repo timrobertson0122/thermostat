@@ -31,8 +31,8 @@ Technologies
 ------------
 
 Jquery/Javascript  
-Tested with Jasmine 
-Styled with Bootstrap
+Tested with Jasmine  
+Styled with Bootstrap  
 
 ### Future Functionality
 
