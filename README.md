@@ -4,7 +4,7 @@ Mock thermostat with OpenWeather API
 Try it out on Heroku
 http://jsthermostat.herokuapp.com/
 
-![Screenshot](/img.Screen.png)
+![Screenshot](/img/Screen.png)
 
 
 Specification
