@@ -1,8 +1,8 @@
 describe('Interface', function() {
   
   beforeEach(function() {
-    jasmine.getFixtures().fixturesPath = '.';
-    loadFixtures('index.erb.html');
+    jasmine.getFixtures().fixturesPath = './app/views';
+    loadFixtures('index.erb');
     $.holdReady(false);
   });
 

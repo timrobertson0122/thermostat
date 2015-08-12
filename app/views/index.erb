@@ -3,38 +3,85 @@
   <head>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
     <title>Thermostat</title>
 
   </head>
 
   <body>
+  <div class="container-fluid">
+    <div class="well col-md-6 col-md-offset-3">
+      <h2 class="text-center">Current Temperature</h2>
+      <h1 class="text-center" id="temp"></h1>
 
-    <h1>Bitchin' Thermostat</h1>
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <button type="button" class="btn btn-block btn-lg btn-danger" id='up'>
+            <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span> UP
+          </button>
+        </div>
+        <div class="col-md-4 text-center">
+          <button type="button" class="btn btn-block btn-lg btn-info" id='down'>
+            <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span> DOWN
+          </button>
+        </div>
+        <div class="col-md-4 text-center">
+          <button type="button" class="btn btn-block btn-default" id='resetbutton'>
+            <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Reset</button>
+        </div>
+      </div>
 
-    <p>Current Temp</p><br>
-    <div id="temp"></div><br>
+      <div class="row">
+        <div id="psStatus">
+          <h4 class="text-center">Power Saving Mode</h4>
+            <div class="col-md-6 col-md-offset-3 text-center">
+              <div class="radio-inline">
+                <label>
+                  <input type="radio" name="PSM" value="On" id="psm_on" checked>
+                  On <h6>(max temp 25)</h6>
+                </label>
+              </div>
+              <div class="radio-inline">
+                <label>
+                  <input type="radio" name="PSM" value="Off" id="psm_off">
+                  Off <h6>(max temp 32)</h6>
+                </label>
+              </div> 
+            </div>
+        </div>
+      </div>  
 
-      <button type="button" id='up'>&uarr;</button>
-      <button type="button" id='down'>&darr;</button>
-      <button type="button" id='resetbutton'>Reset</button><br>
-   
-    <br>
-    <div id="psStatus">Power Saving Mode:
-      <input type="radio" name="PSM" value="On" id="psm_on"/>On
-      <input type="radio" name="PSM" value="Off" id="psm_off">Off
+      <div class="row">
+        <h4 class="text-center">Check the current weather</h4>
+        <form id='city-search' name="City search">
+          <div class="form-group">
+            <input type='text' class="form-control" name="city" placeholder="Enter a city name - e.g. London">
+          </div>
+          <div class="form-group">
+            <button type='submit' class="btn btn-block btn-success" value='search'>Search</button>
+          </div>
+        </form>
+      </div>
+      
+      <div class="row">
+        <div class="text-center">
+          <h5>Current Forecast</h5>
+          <div id='city-weather'></div>
+          <h5>Current Temperature(c)</h5>
+          <div id='city-temp'> </div>
+        </div>
+      </div>
+
     </div>
-
-    <br>
-    What is the weather in another City?
-    <form id='city-search' name="City search">
-      <input type='text' name='city'/>
-      <input type='submit' value='search'>
-    </form>
-    <br>
-    Current Forecast: <div id='city-weather'> </div>
-    <br>
-    Current Temperature (C): <div id='city-temp'> </div>
+  </div>
 
     <script src="JS/src/weather.js"></script>
     <script src="JS/src/Thermostat.js"></script>

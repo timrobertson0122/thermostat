@@ -37,13 +37,3 @@ Thermostat.prototype.psButton = function() {
     this._temp = 25;
   };
 };
-
-// Thermostat.prototype.tempColor = function() {
-//   if (this._temp < 18) {
-//     return 'green';
-//   };
-//   if (this._temp < 25) {
-//     return 'yellow';
-//   };
-//   return 'red';
-// };
